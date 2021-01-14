@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            width: 1rem;
+            height: 1rem;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            transition: 5s ease-in-out;
+        }
+        .hide{
+            display: none;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .bg{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(to right bottom, #ffa400 10%, #00aefd 60%, #ffa400 15%);
+            position: relative;
+        }
+        .shopee{
+            width: 100vh;
+            height: 200px;
+            background-image: linear-gradient(to bottom, #EE0000,#FF6600);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="test" id="tst"></div>
+    </div>
+    <div class="shopee">
+
+    </div>
+</body>
+<script>
+    var object = document.getElementById('tst');
+    document.addEventListener('mousemove', (e) =>{
+       object.style.top = e.pageY + 'px';
+       object.style.left = e.pageX + 'px';
+   })
+    window.addEventListener('mousemove', mouse);
+    var target = document.querySelector('.test');
+    const but = document.querySelector('#cl');
+    but.onclick = () =>{
+        target.classList.toggle('hide');
+    }
+</script>
+</html>
